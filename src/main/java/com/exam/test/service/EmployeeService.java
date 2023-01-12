@@ -16,4 +16,6 @@ public interface EmployeeService {
     List<EmployeeDTO> getAllEmployeesYearlySalary();
     
     List<Employee> raise10PercentSalary();
+    
+    List<Employee> delete2lowestSalary();
 }

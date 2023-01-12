@@ -68,4 +68,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.saveAll(employees);
     }
     
+    @Override
+    public List<Employee> delete2lowestSalary() {
+        List<Employee> employees = employeeRepository.findAll();
+        employees.sort((o1, o2) -> (int) (o1.getMonthlySalary() - o2.getMonthlySalary()));
+        this.employeeRepository.delete(employees.get(0));
+        this.employeeRepository.delete(employees.get(1));
+        employees.remove(0);
+        employees.remove(0);
+        return employees;
+    }
+    
 }

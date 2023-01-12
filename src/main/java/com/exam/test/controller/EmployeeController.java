@@ -44,4 +44,9 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employeeService.raise10PercentSalary());
     }
     
+    @GetMapping("/delete2lowestSalary")
+    public ResponseEntity<List<Employee>> delete2lowestSalary() {
+        return ResponseEntity.ok().body(employeeService.delete2lowestSalary());
+    }
+    
 }
