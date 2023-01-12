@@ -1,7 +1,7 @@
 package com.exam.test.model;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-@Table(name = "developer")
 @Entity
+@DiscriminatorValue("TEST")
 public class Tester extends Employee {
+    
     private Boolean automated;
+    
 }
