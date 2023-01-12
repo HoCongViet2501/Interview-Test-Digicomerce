@@ -2,6 +2,7 @@ package com.exam.test.controller;
 
 import com.exam.test.dto.EmployeeDTO;
 import com.exam.test.model.Developer;
+import com.exam.test.model.Employee;
 import com.exam.test.model.Tester;
 import com.exam.test.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,11 @@ public class EmployeeController {
     @GetMapping("/getAllEmployeesYearlySalary")
     public ResponseEntity<List<EmployeeDTO>> getAllEmployeesYearlySalary() {
         return ResponseEntity.ok().body(employeeService.getAllEmployeesYearlySalary());
+    }
+    
+    @GetMapping("/raise10PercentSalary")
+    public ResponseEntity<List<Employee>> raise10PercentSalary() {
+        return ResponseEntity.ok().body(employeeService.raise10PercentSalary());
     }
     
 }
